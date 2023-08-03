@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel = "stylesheet" href = "main.css">
+    <script src = "eel.js"></script>
+  </head>
+  <body>
+
+    <div class = "in"><input id = "pap" type="text"  class = "city" placeholder="Enter the city..." required=""></div>
+    <h1 id = "t"></h1>
+    <button class = "knop" type = "submit" id = "submit" placeholder="press"></button>
+    <script type="text/javascript">
+        async function d_temp(){
+            let place = document.getElementById("pap").value;
+            let res = await eel.get_temp(place)();
+            document.getElementById("t").innerHTML = res;
+        }
+        document.querySelector("#submit").onclick = function(){
+            d_temp();
+        }
+                
+    </script>
+
+  </body>
+</html>
